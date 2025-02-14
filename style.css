@@ -5,13 +5,23 @@ html{
     scroll-behavior: smooth;
 }
 
-@keyframes rot{
-    0%{
-        rotate: 360deg;
-    }
-    100%{
-        rotate: 0deg;
-    }
+::-webkit-scrollbar {
+    width: 10px;
+  }  
+::-webkit-scrollbar-thumb {
+    background: #039387;
+    rotate: 40deg;
+    border-radius: 10px;
+}
+::-webkit-scrollbar:horizontal {
+    width: 0px;
+    height: 0px;
+}
+::-webkit-scrollbar-thumb:horizontal{
+    background: transparent;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: #085b54;
 }
 
 
@@ -49,7 +59,30 @@ section {
     width: 1170px;
 }
 
+@media (min-width:768px){
+    .container{
+        width:750px ;
+    }
+    .heading{
+        font-size:50px;
+    }
+    .heading + p{
+        margin-top: -20;
+    }
+}
+/* mediam */
+@media (min-width:992px){
+    .container{
+        width:790px ;
+    }
+}
 
+/* large */
+@media (min-width:1200px){
+    .container{
+        width:1170px;
+    }
+}
 
 header{
     position: fixed;
@@ -68,6 +101,33 @@ header .nav-phone{
     display: none;
 }
 
+@media (max-width: 700px) {
+    header nav{
+        display: none;
+    }
+    header  *{
+        animation: none !important;
+    }
+    header .nav-phone   {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        justify-content: center;
+    }
+    header .nav-phone a{
+        all: initial;
+        margin: 10px;
+    }
+    header .nav-phone i{
+        font-size: 23px;
+        color:#008f84;
+    }
+    header i:hover{
+        color: #066d65;
+    }
+    
+    
+}
 .head{
     display: flex;
     justify-content: space-around;
@@ -158,6 +218,31 @@ nav a:hover:before{
     width: 400px;
     height: 400px;
     transition: 0.4s;
+}
+
+@media (max-width: 767px) {
+    .container{
+        width:450px ;
+        margin: 0;
+    }
+    header h1 {
+        font-size: 24px;
+        text-align: center;
+    }
+    .info img {
+        width: 350px;
+        height: 350px;
+    }
+    .imag{
+        margin-left:-50%;
+    }
+    .text h1 {
+        font-size: 45px !important;
+    }
+    .text p{
+        font-size: 17px !important;
+        width: 90%;
+    }
 }
 
 .info img:hover{
@@ -328,6 +413,48 @@ h2{
     animation: autorun 10s infinite linear;
      animation-delay:calc(1s * (var(--posidtiom) - 1)) ;
 }
+
+@media (max-width: 768px) {
+    .slider .list .item{
+    animation: autorun 5s infinite linear;
+    animation-delay:calc(0.5s * (var(--posidtiom) - 1)) ;
+    }
+    .slider{
+        width: 350px;
+    }
+
+
+}
+/* .list .item:nth-child(1){
+    animation-delay: 1s;
+}
+.list .item:nth-child(2){
+    animation-delay: 2s;
+}
+.list .item:nth-child(3){
+    animation-delay: 3s;
+}
+.list .item:nth-child(4){
+    animation-delay: 4s;
+}
+.list .item:nth-child(5){
+    animation-delay: 5s;
+}
+.list .item:nth-child(6){
+    animation-delay: 6s;
+}
+.list .item:nth-child(7){
+    animation-delay: 7s;
+}
+.list .item:nth-child(8){
+    animation-delay: 8s;
+}
+.list .item:nth-child(9){
+    animation-delay: 9s;
+}
+.list .item:nth-child(10){
+    animation-delay: 10s;
+} */
 @keyframes autorun{
     from{
         left: 100%;
@@ -348,4 +475,3 @@ h2{
     background-clip:text ;
     -webkit-text-fill-color: transparent ;
 }
-
