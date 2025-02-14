@@ -475,3 +475,190 @@ h2{
     background-clip:text ;
     -webkit-text-fill-color: transparent ;
 }
+
+
+
+
+
+.title{
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight:bolder ;
+    font-size: 20px;
+    width: fit-content;
+    margin: 10px auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.title p{
+    margin-top: -10px;
+    line-height: 1.5;
+    font-weight: 100;
+    color: #3e3d3d;
+    text-align: justify;
+    width: 80%;
+}
+.Recent-Work{
+    padding: 10px 0 60px;
+}
+.project{
+    width:100%;
+    margin:50px auto;
+    height: fit-content;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.imag{
+    overflow: hidden;
+    margin: auto;
+
+}
+.phone{
+    position: absolute;
+    top: 25%;
+    rotate: 2deg;
+    right: -30px;
+}
+.imag img{
+    width: 390px;
+    transition: 0.6s;
+    object-fit: cover;
+}
+
+
+.phone img{
+    width:170px;
+    height: 170px;
+    transition:0.6s ease-in-out;
+}
+
+.imag img:hover{
+    transform: scale(1.3,1.3) translatey(20px);
+}
+.imag div img:hover+ .phone img{
+    transform: translateX(90px);
+}
+.phone img:hover{
+    transform: scale(1.5,1.5) translatey(0px) rotate(-2deg);
+}
+
+.imag{
+    position: relative;
+}
+
+
+/* .imag::after {
+    content: "";
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.3);
+    position: absolute;
+    transform-origin:top  ;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scaleY(0); 
+    transition: transform 0.5s;
+}
+
+.imag:hover::after {
+    transform: translate(-50%, -50%) scaleY(1); 
+} */
+
+.slow{
+    animation: slow 2s linear both;
+    animation-timeline: view(80% 5%);
+
+}
+@keyframes slow{
+    from{
+        transform: translateY(30px) scale(0.8,0.8);
+    }
+    to{
+        transform: translateY(0) scale(1,1);
+    }
+}
+
+.se-more{
+    all: initial;
+    background-color: #489c84;
+    color: rgb(0, 0, 0);
+    cursor: pointer;
+    padding: 10px 20px;
+    font-size: 20px;
+    box-shadow: 0 0 5px black;
+    border-radius:5px ;
+    float: right;
+    transition: 0.5s;    
+    position: relative;
+    margin-top: -100px;
+    margin-right: 20px;
+}
+.se-more:before{
+    content: "";
+    position: absolute;
+    background-color: rgba(255, 255, 255,0.2);
+    width: 0%;
+    height: 100%;
+    top: 0;
+    right: 0;
+    transition: 0.5s;
+    border-radius: inherit;
+}
+
+.se-more:hover::before{
+    width: 100%;
+}
+
+.se-more:focus + .col,.click-me:active + .col{
+    display: block;
+}
+.random{
+    width: fit-content;
+    margin: auto;
+    transition: 1s;
+}
+.col{
+    display: none;
+    margin:100px auto 100px ;
+}
+.col div{
+    margin: 0px auto;
+    display: flex;
+    width: fit-content;
+    height: 200px;
+    transform-style: preserve-3d;
+    transform: perspective(1500px);
+}
+.itemes img{
+    margin:10px 2px 10px 0px;
+    width: 120px;
+    height: 155px;
+    box-shadow: 2px 20px 10px rgb(169, 162, 162);
+}
+.col div .itemes{
+    transition: .5s;
+    filter: brightness(0.2);
+}
+.col div .itemes:hover{
+    filter: brightness(1);
+    transform: translateZ(200px);
+}
+.col div .itemes:hover + *{
+    filter: brightness(0.6);
+    transform: translateZ(150px) rotateY(40deg);
+}
+.col div .itemes:hover + * + *{
+    filter: brightness(0.4);
+    transform: translateZ(70px) rotateY(25deg);
+}
+.col div .itemes:has(+ *:hover) {
+    filter: brightness(0.6);
+    transform: translateZ(150px) rotateY(-40deg);
+}
+.col div .itemes:has(+ * + *:hover ){
+    filter: brightness(0.4);
+    transform: translateZ(70px) rotateY(-25deg);
+}
